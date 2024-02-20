@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @jnexan27
 - 👀 I’m interested in Devops carrier
-- 🌱 I’m currently learning aws, git, docker, unix, OCI
+- 🌱 I’m currently learning aws, git, docker, Jenkins, python, Gcp 
 - 📫 jnexan20@gmail.com
 
 <!---

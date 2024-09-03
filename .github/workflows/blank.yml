@@ -32,9 +32,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      
-      -name: Prueba de comandos de github actions
-        run: |
-          echo otra operacion de prueba
-          echo prueba prueba prueba
-          

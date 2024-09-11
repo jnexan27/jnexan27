@@ -1,6 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-
-name: CI
+name: Demo GitHub Actions
 
 # Controls when the workflow will run
 on:
@@ -13,14 +12,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # Job for building and running basic scripts
   build:
-    # The type of runner that the job will run on
     runs-on: self-hosted
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
@@ -34,3 +29,23 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  # Job for performing code scanning with CodeQL
+  code-scanning:
+    name: Code Scanning
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Sets up CodeQL tools
+      - name: Set up CodeQL
+        uses: github/codeql-action/setup@v2
+        with:
+          languages: 'python, javascript'  # List the languages you want to analyze
+
+      # Perform CodeQL analysis
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: 'security'  # You can also use 'security-and-quality'

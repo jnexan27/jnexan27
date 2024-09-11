@@ -29,23 +29,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
-  # Job for performing code scanning with CodeQL
-  code-scanning:
-    name: Code Scanning
-    runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
-      # Sets up CodeQL tools
-      - name: Set up CodeQL
-        uses: github/codeql-action@v3
-        with:
-          languages: 'python, javascript'  # List the languages you want to analyze
-
-      # Perform CodeQL analysis
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
-        with:
-          category: 'security'  # You can also use 'security-and-quality'
